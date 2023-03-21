@@ -1,0 +1,4 @@
+# use "bash push.txt" to avoid typing 3 lines
+git add -A
+git commit -m "update"
+git push

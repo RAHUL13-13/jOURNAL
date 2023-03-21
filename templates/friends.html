@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Friends
+{% endblock %}
+
+{% block main %}
+    <h3>Results</h3>
+        <form action="/friend" method="POST" style='display:inline; padding:3px;'>
+                <select name='sort' class="form-control" id='hist' style='font-size: 70%; height:3%; width:18%;' onchange="this.form.submit()">
+                    <option style='font-style:bold;'disabled selected value=''>Sorting</option>
+                    <option value='ASC'>Recents first</option>
+                    <option value='DESC'>Oldests first</option>
+                </select>
+            </div>
+        </form>
+    </h4>
+    <table class="table table-striped" style="background-color: #F0EFF9">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for friend in friends %}
+                <tr>
+                    <td>{{ friend["id"] }}</td>
+                    <br>
+                    <td>{{ friend["username"] }}</td>
+                    <td><form action='/friends/friendsdiary' method='POST' style='display: inline;'>
+                            <button class='button-purple pure-button ' value='{{ friend["id"] }}'onclick='this.form.submit()' name='viewfriend'>View
+                            </button>
+                        </form>
+                    <td>
+                        {% if not added %}
+                        <form action='/friends' method='POST' style='display: inline;'>
+                            <button class='pure-button button-purple' value='{{ friend["id"] }}' onclick='this.form.submit()' name='addfriend'>Add</button>
+                        </form>
+                        {% else %}
+                            <button class='pure-button button-purple' disabled>Added</button>
+                        {% endif %}</td>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Your Entries
+{% endblock %}
+
+{% block main %}
+    <h4>Entries
+        <form action="/entries" method="POST" style='display:inline; padding:3px;'>
+                <select name='sort' class="form-control" id='hist' style='font-size: 70%; height:3%; width:18%;' onchange="this.form.submit()">
+                    <option style='font-style:bold;'disabled selected value=''>Sorting</option>
+                    <option value='ASC'>Recents first</option>
+                    <option value='DESC'>Oldests first</option>
+                </select>
+        </form>
+    </h4>
+    <form action='/entries'></form>
+    <table class="table table-striped" style="background-color: #F0EFF9">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Title</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in entries %}
+                <tr>
+                    <td><form action="/entries" method="post"><input type='checkbox' value='{{ row["entryid"] }}'></form></td>
+                    <td>{{ row["title"] }}</td>
+                    <br>
+                    <td>{{ row["date"] }}</td>
+                    <td><form action='/entries' method='POST' style='display: inline;'>
+                        <button class='pure-button button-purple' value='{{ row["entryid"] }}' onclick='this.form.submit()' name='view' style='background-color: '>View
+                    </button>
+                    </form>
+                    </td>
+                    <td><form action='/entries/edit' method='GET' style='display: inline;'>
+                        <button class='pure-button button-purple' name='edit' value='{{ row["entryid"] }}' type='submit'>Edit
+                    </button>
+                    </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

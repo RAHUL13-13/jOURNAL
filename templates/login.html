@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="/login" method="post">
+        <div class="form-group">
+            <p>
+            <input autocomplete="off" autofocus class="form-control" id='u' onkeyup='forced("#u", "#p")'  name="username" placeholder="Username" type="text">
+            </p>
+            <input class="form-control" name="password" id='p' placeholder="Password" onkeyup='forced("#u", "#p")' type="password">
+        </div>
+        <button class="btn button-normal pure-button" id='submit' type="submit" disabled>Log In</button>
+    </form>
+{% endblock %}

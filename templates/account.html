@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block title %}
+    Account
+{% endblock %}
+
+{% block main %}
+    <h4> My account</h4>
+    <table class="table table">
+        <tr>
+            <th>User ID:</th>
+            <td>{{ session.user_id }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>Username:</th>
+            <td>{{ session.username }}
+
+            </td>
+            <td>
+            <form action='/account' method='POST' style='display: inline;'class="pure-form">
+                <input autocomplete="off" autofocus class="pure-input-1-2" name="changeun" id='u' onkeyup='d1("#u")'  placeholder="New name(max. 15)" type="text">
+                    <button id='submit' class="btn button-normal pure-button" style='display: inline;' type="submit" disabled>Change</button>
+                </form>
+                </td>
+        </tr>
+        <tr>
+            <th>Password:</th>
+            <td>{{ stars }}</td>
+            <td>
+                <form action='/account' method='POST' style='display: inline;'class="pure-form">
+                <input autocomplete="off" autofocus class="pure-input-1-2" name="changepw" id='p' onkeyup='cutie()' placeholder="New password" type="text">
+                    <button id='submit2' class="btn button-normal pure-button" style='display: inline;' type="submit" disabled>Change</button>
+                </form>
+                </td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <th>Status</th>
+            <td>Private:</td>
+            <td>
+                <form action='/account' style='display: inline;' method='post' class="pure-form" >
+                {% if status == "PRIV" %}
+                    <input name="status" type="checkbox" value="PRIV" name="status" checked onchange="this.form.submit()">
+                {% else %}
+                    <input name="status" type="checkbox" value="PRIV" name="status" onchange="this.form.submit()">
+                {% endif %}
+                </form>
+            </td>
+        </tr>
+    </table>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Edit Entry
+{% endblock %}
+
+{% block main %}
+    <h4>Edit Entry</h4>
+    <form action="/entries/edit" method = "post" class="pure-form">
+        <fieldset class="form-group">
+            <input autocomplete="off" id="title" autofocus type="text" class="pure-input-1-2" name='title' onkeyup='d("#title", "#entry")' placeholder="A title(optional)" value='{{ row[0]["title"] }}'/>
+            <br>
+            <br>
+            <textarea id="entry" autocomplete="off" autofocus rows='18' class="pure-input-1-2 " name='entry' onkeyup='d("#title", "#entry")' placeholder="Write your entry here!" >{{ row[0]["entry"] }}</textarea>
+        </fieldset>
+        <button href='/entries' class="pure-button">Cancel</button>
+        <button type="submit" id="submit" value='{{ row[0]["entryid"] }}' class="pure-button pure-input-1-2 pure-button-primary button-normal" name='submit' style="background-color: #1678ff" >Edit your entry!</button>
+    </form>
+
+
+
+    <!--    <fieldset class="form-group">
+            <input autocomplete="off" id="title" autofocus type="text" class="pure-input-1-2" name='title' onkeyup='d("#title", "#entry")'  />
+            <br>
+            <br>
+            <textarea id="entry" autocomplete="off" autofocus rows='18' class="pure-input-1-2 " name='entry' onkeyup='d(#title", "#entry")'></textarea>
+        </fieldset>
+        <button  type="submit" id="submit" class="pure-button pure-input-1-2 pure-button-primary"  style="background-color: #1678ff"></button>
+    </form> -->
+{% endblock %}

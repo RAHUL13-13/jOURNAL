@@ -1,0 +1,196 @@
+nav .navbar-brand
+{
+    /* size for brand */
+    font-family: "Georgia", serif;
+    font-size: xx-large;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+/* colors for brand */
+nav .navbar-brand .purple
+{
+    color: #003C8F;
+    font-family: serif;
+}
+nav .navbar-brand .red
+{
+    color: #FF9F00;
+}
+.nav-link{
+    color: #c17aff;
+}
+.nav-link:hover{
+    background: #FFFBA4;
+}
+#name:hover{
+    background: none;
+}
+#name{
+    border-bottom: 2px solid #003c8f;
+    color: #7f15ff;
+    padding-bottom: 0px;
+}
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+nav
+{
+    border-bottom: 3px solid #F8CD8F;
+    background-color: #FFFFFF;
+}
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+
+main table
+{
+    /* left-align contents */
+    text-align: left;
+}
+
+main tfoot
+{
+    /* boldface tables' footers */
+    font-weight: bold;
+}
+
+.button-normal {
+    color: white;
+    border-radius: 4px;
+    background: #7dc6ff;
+    /* this is an orange */
+}
+
+.button-purple{
+    height: 30%;
+    width: auto;
+    position: relative;
+    background-color: #d8aaff;
+    font-size: 80%;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: white;
+}
+
+
+
+BODY{
+    background: #FFF8EE;
+    max-width: 100%;
+}
+h3, h4{
+    font-family: "Georgia", serif;
+}
+a
+{
+    color: #7cb3ff;
+}
+
+.text{
+    white-space: pre-line;
+    text-align: left;
+}
+
+*, ::after, ::before {
+    box-sizing: inherit;
+}
+
+*, ::after, ::before {
+    box-sizing: inherit;
+}
+.form-group{
+    width: 100%;
+}
+.pure-form .pure-input-1-2 {
+    width: inherit;
+}
+/* w3 */
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Float cancel and delete buttons and add an equal width */
+.cancelbtn, .deletebtn {
+  float: center;
+}
+
+/* Add a color to the cancel button */
+.cancelbtn {
+  background-color: #ccc;
+  color: black;
+}
+
+/* Add a color to the delete button */
+.deletebtn {
+  background-color: #f44336;
+}
+
+/* Add padding and center-align text to the container */
+.container {
+  width: 50%;
+  text-align: center;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: transparent;
+  padding-top: 50px;
+  font-family: "Georgia", serif;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #F0EFF9;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 3px solid #003c8f;
+  width: 60%; /* Could be more or less, depending on screen size */
+}
+
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and delete button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .deletebtn {
+     width: 100%;
+  }
+}

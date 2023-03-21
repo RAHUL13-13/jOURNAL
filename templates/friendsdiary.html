@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Friends
+{% endblock %}
+
+{% block main %}
+    <h4>Friends
+        <form action="/friend" method="POST" style='display:inline; padding:3px;'>
+                <select name='sort' class="form-control" id='hist' style='font-size: 70%; height:3%; width:18%;' onchange="this.form.submit()">
+                    <option style='font-style:bold;'disabled selected value=''>Sorting</option>
+                    <option value='ASC'>Recents first</option>
+                    <option value='DESC'>Oldests first</option>
+                </select>
+            </div>
+        </form>
+    </h4>
+    <table class="table table-striped" style="background-color: #F0EFF9">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Title</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in table %}
+                <tr>
+                    <td></td>
+                    <td>{{ entry["title"] }}</td>
+                    <br>
+                    <td>{{ entry["date"] }}</td>
+                    <td><form action='/entries' method='POST' style='display: inline;'>
+                        <button class='pure-button' value='{{ entry["entryid"] }}' style='height: 30%; width: 100%; position: relative; background-color: #d8aaff; font-size: 80%; padding: 5px; color: white'
+                        onclick='this.form.submit()' name='view'>View
+                    </button>
+                    </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

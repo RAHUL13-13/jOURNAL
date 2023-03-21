@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block main %}
+    <h4>Search in entries</h4>
+    <form action="/search_d" method="post" class="pure-form">
+        <fieldset class="form-group">
+            <input autocomplete="off" autofocus type="text" class="pure-input-1-2" name='search_item' id="search_item" onkeyup="d1('#search_item')"placeholder="What are you searching?">
+            <br>
+        <button type="submit" id="submit" class="pure-button pure-input-1-2 pure-button-primary button-normal" style="background-color: #1678ff" disabled>Search In My Entries</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,26 @@
+Can this be the ReadMe or a user's guide?
+
+
+Page    Description                         Design                              Code                            Progress
+
+Index   Just a general welcome thing        Show the number of entries and      SQL queries and if statements   Welcome message
+                                            encouraging messages(I'll write)    for customizing messages.
+
+New     Add a diary entry.                  Textboxes for a title and entry     Form groups, post method        Done.
+                                            with button showing like 1st.       insert into db.
+
+Entries Show existing entries which can be  Sort by date, shows title, click    SQL queries, another password   Need lock function
+        locked.                             to unlock and view by returning     , jinja ifs
+                                            the text when post
+
+Friends To search public accounts.          search box                          form, sql                       can we view them?
+
+Advice  Users can post snippets of entries  Show recent posts from friends, a   Comments table have post id     TODO
+        for friends to view and comment on. comment box.
+
+Account Lets users manage their accounts.   Shows id, username and password     forms                           done
+                                            as '*' and a textbox to change.
+                                            And status.
+
+Notifs  Notify users for goals reached or   Need to find a way to mark as
+        post comments.                      read.

@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Friends
+{% endblock %}
+
+{% block main %}
+    <form action="/friends" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus id="fname" onkeyup='d("#fname")'class="form-control" name="username" placeholder="Search friend's username" type="text">
+        </div>
+        <button class="btn btn-primary" id="submit" type="submit" disabled>Search</button>
+    </form>
+    <h3>Friends Added</h3>
+        <form action="/friend" method="POST" style='display:inline; padding:3px;'>
+                <select name='sort' class="form-control" id='hist' style='font-size: 70%; height:3%; width:18%;' onchange="this.form.submit()">
+                    <option style='font-style:bold;'disabled selected value=''>Sorting</option>
+                    <option value='ASC'>Recents first</option>
+                    <option value='DESC'>Oldests first</option>
+                </select>
+            </div>
+        </form>
+    </h4>
+    <table class="table table-striped" style="background-color: #F0EFF9">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for friend in friends %}
+                <tr>
+                    <td>{{ friend["id"] }}</td>
+                    <br>
+                    <td>{{ friend["username"] }}</td>
+                    <td><form action='/friends/friendsdiary' method='POST' style='display: inline;'>
+                        <button class='pure-button button-normal' value='{{ friend["id"] }}'onclick='this.form.submit()' name='viewfriend'>View
+                    </button>
+                    </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

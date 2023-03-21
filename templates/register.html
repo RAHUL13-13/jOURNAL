@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post" class="pure-form">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" onkeyup='forced3("#u", "#p", "#p2")' id='u' placeholder="Username" type="text">
+            <div style='border: none; color:grey;'>    (at most 15 characters without spaces.)</div>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" onkeyup='forced3("#u", "#p", "#p2")' id='p' placeholder="Password" type="password">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="confirmation" onkeyup='forced3("#u", "#p", "#p2")' id='p2' placeholder="Confirm password" type="password">
+        </div>
+        <div id='match' style='display:none' class='form-group'>Passwords don't match</div>
+            <div style='border: none; color:grey;'>Profile Visibility (DEFAULT: public)</div>Private
+            <input type="checkbox" value="PRIV" name="status"><br>
+        <button disabled class="btn button-normal pure-button" type="submit" id='submit'>Register</button>
+    </form>
+{% endblock %}

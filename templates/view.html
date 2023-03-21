@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Entry
+{% endblock %}
+
+{% block main %}
+    <h3>{{ entry["date"] }}
+    {% if entry["title"] %}
+        <br>
+        <br>
+        {{ entry["title"] }}: </h3>
+        <br>
+    {% endif %}
+    <p class="text">{{ entry["entry"] }}</p>
+    <!-- from w3 -->
+    {% if session.user_id == entry["id"] %}
+      <form action='/entries/edit' method='GET' style=' display: inline;'>
+        <button class='pure-button button-normal' value='{{ entry["entryid"] }}'
+          onclick='this.form.submit()' name='edit'>Edit
+      </button>
+      </form>
+      <div style='display: inline; padding-left: 115px;'>
+      <button class="pure-button button-normal" style='background: red;' onclick="document.getElementById('id01').style.display='block'">Delete entry</button>
+      <div id="id01" class="modal">
+        <form class="modal-content" action="/entries" method="POST">
+          <div class="mcontainer">
+            <h1>Delete Entry</h1>
+            <p>Are you sure you want to delete your entry?</p>
+            <div class="clearfix">
+              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+              <button value="{{ entry["entryid"] }}'" name="delete" onclick="this.form.submit()" class="deletebtn">Delete</button>
+            </div>
+          </div>
+        </form>
+      </div></div>
+
+    {% endif %}
+    <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+    </script>
+
+{% endblock %}
