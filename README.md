@@ -1,4 +1,4 @@
-# Thanks for checking out our project!
+# Thanks for checking out the project!
 ## Getting Started - Register
 Registering is simple, I believe.
 Enter a username of at most 15 characters without spaces. Type in a password and confirm by typing it again.
