@@ -38,7 +38,6 @@ Session(app)
 db = SQL("sqlite:///diary.db")
 
 
-# connection = psycopg2.connect(database="d290ae7p5vcp2v", user="awywxapixuwmgj", password="69d423becb0ed39ecf4493a9beaf3589c02784505c7937dd61129f206139be46", host="ec2-54-236-169-55.compute-1.amazonaws.com", port=5432)
 
 # db = connection.cursor()
 #session["friends_id"] = ""
